@@ -1,10 +1,210 @@
-{% extends "_layout.swig" %}
-{% import '_macro/post.swig' as post_template %}
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1">
 
-{% block title %} {{ page.title }} - {{ config.title }} {% endblock %}
 
-{% block content %}
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="description" content="日常思考1"/>
+
+
+
+
+
+
+
+
+    <link rel="alternate" href="/default" title="cloudyDog's blog">
+
+
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="/aupuj-uf7ub-001.ico?v=1.1"/>
+
+
+
+<link rel="canonical" href="http://yoursite.com/2019/07/07/thinking-1-about-software-design/"/>
+
+
+<meta name="description" content="如果要做一件有很多未知情况的事情如开发一个系统，在开发初期做系统设计时，其实很难明确整个系统的全部功能，甚至有可能在后期发现如果要实现一个很小的功能可能要对整个系统进行大改。 为了尽量避免这种情况，我们在系统设计阶段就要遵循一定的绝对正确的基本逻辑，只要走的每一步都合乎这种逻辑，以后出现未知的需求，我们就可以先依据这种逻辑来判断这个需求是否合理，如果不合理，剩下的就是和产品撕逼，如果合理，由于这个">
+<meta property="og:type" content="article">
+<meta property="og:title" content="日常思考1">
+<meta property="og:url" content="http://yoursite.com/2019/07/07/thinking-1-about-software-design/index.html">
+<meta property="og:site_name" content="cloudyDog&#39;s blog">
+<meta property="og:description" content="如果要做一件有很多未知情况的事情如开发一个系统，在开发初期做系统设计时，其实很难明确整个系统的全部功能，甚至有可能在后期发现如果要实现一个很小的功能可能要对整个系统进行大改。 为了尽量避免这种情况，我们在系统设计阶段就要遵循一定的绝对正确的基本逻辑，只要走的每一步都合乎这种逻辑，以后出现未知的需求，我们就可以先依据这种逻辑来判断这个需求是否合理，如果不合理，剩下的就是和产品撕逼，如果合理，由于这个">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2019-07-07T12:51:18.000Z">
+<meta property="article:modified_time" content="2019-08-11T04:17:50.000Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=1.1"/>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
+
+
+
+
+
+<script type="text/javascript">
+  var themeConfig = {
+    fancybox: {
+      enable: false
+    },
+  };
+</script>
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    <title> 日常思考1 - cloudyDog's blog </title>
+  <meta name="generator" content="Hexo 4.2.1"></head>
+
+  <body>
+    <div id="page">
+      <header id="masthead"><div class="site-header-inner">
+    <h1 class="site-title">
+        <a href="/." class="logo">cloudyDog's blog</a>
+    </h1>
+
+    <nav id="nav-top">
+        
+    </nav>
+
+</div>
+
+      </header>
+      <div id="content">
+        
     <div id="primary">
-        {{ post_template.render(page) }}
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          日常思考1
+        
+      </h1>
+
+      <time class="post-time">
+          Jul 7 2019
+      </time>
+    </header>
+
+
+
+    
+            <div class="post-content">
+            <p>如果要做一件有很多未知情况的事情如开发一个系统，在开发初期做系统设计时，其实很难明确整个系统的全部功能，甚至有可能在后期发现如果要实现一个很小的功能可能要对整个系统进行大改。</p>
+<p>为了尽量避免这种情况，我们在系统设计阶段就要遵循一定的绝对正确的基本逻辑，只要走的每一步都合乎这种逻辑，以后出现未知的需求，我们就可以先依据这种逻辑来判断这个需求是否合理，如果不合理，剩下的就是和产品撕逼，如果合理，由于这个需求和我们的系统都是遵循同一套基本逻辑，那实现起来也是会比较顺利的。</p>
+<p>以后做事时也可以采取这种方法，沿着一些绝对正确的基本逻辑走，就像我们来到一个陌生的环境，如果能知道正确方向，哪边是东哪边是北，那就算环境是陌生的，只要我们遵循明确的方向，我们也能达到目的地。</p>
+
+            </div>
+          
+
+    
+  </article>
+
     </div>
-{% endblock %}
+
+      </div>
+
+      <footer id="colophon"><span class="copyright-year">
+    
+        &copy;
+    
+        2012 -
+    
+    2021
+    <span class="footer-author">John Doe.</span>
+    <span class="power-by">
+        Powered by <a class="hexo-link" href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> and <a class="theme-link" href="https://github.com/henryhuang/hexo-theme-polarbearsimple" target="_blank" rel="noopener">Polar Bear Simple</a>
+    </span>
+</span>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+    
+
+
+    
+
+
+    
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+
+    <script type="text/javascript" src="/js/src/theme.js?v=1.1"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=1.1"></script>
+
+    
+
+  
+  <script type="application/ld+json">
+  {
+  "@context": "http://www.schema.org",
+  "@type": "Person",
+  "@id": "https://huangyijie.com/about/",
+  "name": "黄奕杰",
+  "alternateName": "Henry Huang",
+  "nationality": "中国",
+  "birthPlace" : {
+    "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+      "addressLocality": "汕头市",
+      "addressRegion": "广东省",
+          "addressCountry": "中国"
+    }
+  },
+  "gender": "Male",
+  "Description": "Software Engineer",
+  "disambiguatingDescription": "Full stack software engineer, focus on Java and JavaScript.",
+  "jobTitle": "Software Engineer",
+  "url": "https://huangyijie.com",
+  "image": "https://s.gravatar.com/avatar/4e0e61fdf1b2bcfb4ee31da27601fe6b?s=512&r=g",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "深圳市",
+    "addressRegion": "广东省",
+    "addressCountry": "中国"
+  },
+  "sameAs": [
+    "http://weibo.com/626242034",
+    "https://github.com/henryhuang",
+    "https://unsplash.com/@henryhh"
+    ]
+  }
+  </script>
+  </body>
+</html>

@@ -1,10 +1,241 @@
-{% extends "_layout.swig" %}
-{% import '_macro/post.swig' as post_template %}
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1">
 
-{% block title %} {{ page.title }} - {{ config.title }} {% endblock %}
 
-{% block content %}
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="description" content="关于系统设计的思考"/>
+
+
+
+
+  <meta name="keywords" content="软件工程," />
+
+
+
+
+
+    <link rel="alternate" href="/default" title="cloudyDog's blog">
+
+
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="/aupuj-uf7ub-001.ico?v=1.1"/>
+
+
+
+<link rel="canonical" href="http://yoursite.com/2021/02/16/about-system-design-think/"/>
+
+
+<meta name="description" content="软件工程里最有意思也最有挑战性的地方就在于系统设计，这就像在创造一个世界，而我们就是这个世界的上帝，这个世界里的运行法则完全由我们来制定，我们说要有光就有光，说让物体离开手是往天上掉的它就能往天上掉，但是我们如果真的这么随心所欲的来制定运行法则，那这个世界就是一盘乱麻，因此，我依我作为前端的浅薄的经验，妄然的总结了创造“世界”的一些方法论，创造好一个世界，其实就是理清这个世界里的各个单位的关系，让">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于系统设计的思考">
+<meta property="og:url" content="http://yoursite.com/2021/02/16/about-system-design-think/index.html">
+<meta property="og:site_name" content="cloudyDog&#39;s blog">
+<meta property="og:description" content="软件工程里最有意思也最有挑战性的地方就在于系统设计，这就像在创造一个世界，而我们就是这个世界的上帝，这个世界里的运行法则完全由我们来制定，我们说要有光就有光，说让物体离开手是往天上掉的它就能往天上掉，但是我们如果真的这么随心所欲的来制定运行法则，那这个世界就是一盘乱麻，因此，我依我作为前端的浅薄的经验，妄然的总结了创造“世界”的一些方法论，创造好一个世界，其实就是理清这个世界里的各个单位的关系，让">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-02-16T07:39:00.000Z">
+<meta property="article:modified_time" content="2021-02-16T07:39:58.770Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="软件工程">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=1.1"/>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
+
+
+
+
+
+<script type="text/javascript">
+  var themeConfig = {
+    fancybox: {
+      enable: false
+    },
+  };
+</script>
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    <title> 关于系统设计的思考 - cloudyDog's blog </title>
+  <meta name="generator" content="Hexo 4.2.1"></head>
+
+  <body>
+    <div id="page">
+      <header id="masthead"><div class="site-header-inner">
+    <h1 class="site-title">
+        <a href="/." class="logo">cloudyDog's blog</a>
+    </h1>
+
+    <nav id="nav-top">
+        
+    </nav>
+
+</div>
+
+      </header>
+      <div id="content">
+        
     <div id="primary">
-        {{ post_template.render(page) }}
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          关于系统设计的思考
+        
+      </h1>
+
+      <time class="post-time">
+          Feb 16 2021
+      </time>
+    </header>
+
+
+
+    
+            <div class="post-content">
+            <p>软件工程里最有意思也最有挑战性的地方就在于系统设计，这就像在创造一个世界，而我们就是这个世界的上帝，这个世界里的运行法则完全由我们来制定，我们说要有光就有光，说让物体离开手是往天上掉的它就能往天上掉，但是我们如果真的这么随心所欲的来制定运行法则，那这个世界就是一盘乱麻，因此，我依我作为前端的浅薄的经验，妄然的总结了创造“世界”的一些方法论，<strong>创造好一个世界，其实就是理清这个世界里的各个单位的关系</strong>，让他们各司其职，一切井然有序，有主次之分，并且每个单位都是有其生命周期的，既要给每个单位成长的空间也要防止它们成长的盘根错节，牵一发而动全身。</p>
+<p><strong>要想理清这些单位之间关系，我觉得首先就是明确他们各自的本质是什么</strong>，这和需求分析里的明确需求边界相似，但是还是有根本的区别，需求边界指的是这些单位的功能范围，尤其是在快速迭代的产品里，每个版本都会有不同的需求，也就会有不同的需求边界，所以这种需求边界一方面虽然是用来限制用户需求的，但是另一方面却也是基于用户需求的。而我说的明确各个单位的本质，是经过对业务的高度抽象分析，从系统层面对某个单位本身作出的一种限制，并且这种限制是贯穿系统全部生命周期的，是比较稳定不轻易改变的一种限制，而我这么做的理由就是，<strong>”限制“会带来两个好处：自由与安全</strong>，（不受限制的自由带来的是灾难，限制下的自由才是真正的自由）这句话我想懂的人自然会懂。 从另一个方面说，明确各个单位的本质也是系统设计里的第一个有挑战性的地方，需要对相关业务领域有较深的认识和比较强的抽象能力。举个🌰，公司的停车收费业务里有个优惠券和停车卡的概念，优惠券是一次性的，绑定到用户手机号上的，用户可以通过优惠券对订单费用进行减免，停车卡的有效期是长期的，绑定到用户车牌上的，每个停车卡对应着一个相应的订单费用减免规则，起初，我以为优惠券和停车卡的本质都是一种计费规则，只是一个是绑定到手机号上，一个绑定到车牌上。于是在设计停车卡时，都是基于这点进行思考的。后来在与同事讨论时，才发现系统现有的逻辑里，停车卡还起到一种车辆标识的作用，并且这种标识作用是进行与计费无关的逻辑。所以，我之前设计的停车卡并不能适应系统的需求，接下来我有两种解决方案，一是将停车卡的本质确定为计费规则和车辆标识，二是将停车卡的本质确定为只是车辆标识，再重新设计一个本质为计费规则的实体用来实现优惠券和停车卡的计费功能。我倾向于第二种解决方案。</p>
+<p>另外我认为<strong>不能让外界的需求直接决定系统是如何设计的，系统是如何设计的也不会直接限制需求的实现。</strong>因为系统设计的本质是将业务领域经过抽象分析，整合出若干的实体和实体之间的关系，然后在软件世界里用逻辑来表达这种实体及关系。而用户需求的本质就是把部分关系给表现出来让用户可见，或者是给这些实体之间添加新的关系。可以说用户需求只是系统的一个子集，所以如果直接由需求来决定系统设计，那结果就是每次需求都得来次重大重构。反过来，正是因为系统的本质是在软件世界里模拟出业务相关的现实世界，那能在现实世界走得通的需求在系统里自然也能走得通，所以说系统设计不会直接限制用户的需求，不过前提是各个实体的本质确立的没有问题，而这个的前提是对业务领域的深入理解，当然谁也不能保证万无一失，所以在发现实体的本质出现偏差时，进行重构是很有必要的。另外，用户的需求也要是合理的才行，而如何判断一个需求是否合理，在前年写的文章<a href="https://cloudydog.net/2019/08/29/produce-think/" target="_blank" rel="noopener">《产品思考》</a>里表达过。</p>
+
+            </div>
+          
+
+    
+      <footer class="post-footer">
+        <div class="post-tags">
+          
+            <a href="/tags/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/">软件工程</a>
+          
+        </div>
+
+        
+        
+  <nav class="post-nav">
+    
+    
+      <a class="next" href="/2021/02/16/sofeware-engineering-has-no-new-thing/">
+        <span class="next-text nav-default">软件工程里没有新的东西</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+        
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+      </footer>
+    
+  </article>
+
     </div>
-{% endblock %}
+
+      </div>
+
+      <footer id="colophon"><span class="copyright-year">
+    
+        &copy;
+    
+        2012 -
+    
+    2021
+    <span class="footer-author">John Doe.</span>
+    <span class="power-by">
+        Powered by <a class="hexo-link" href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> and <a class="theme-link" href="https://github.com/henryhuang/hexo-theme-polarbearsimple" target="_blank" rel="noopener">Polar Bear Simple</a>
+    </span>
+</span>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+    
+
+
+    
+
+
+    
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+
+    <script type="text/javascript" src="/js/src/theme.js?v=1.1"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=1.1"></script>
+
+    
+
+  
+  <script type="application/ld+json">
+  {
+  "@context": "http://www.schema.org",
+  "@type": "Person",
+  "@id": "https://huangyijie.com/about/",
+  "name": "黄奕杰",
+  "alternateName": "Henry Huang",
+  "nationality": "中国",
+  "birthPlace" : {
+    "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+      "addressLocality": "汕头市",
+      "addressRegion": "广东省",
+          "addressCountry": "中国"
+    }
+  },
+  "gender": "Male",
+  "Description": "Software Engineer",
+  "disambiguatingDescription": "Full stack software engineer, focus on Java and JavaScript.",
+  "jobTitle": "Software Engineer",
+  "url": "https://huangyijie.com",
+  "image": "https://s.gravatar.com/avatar/4e0e61fdf1b2bcfb4ee31da27601fe6b?s=512&r=g",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "深圳市",
+    "addressRegion": "广东省",
+    "addressCountry": "中国"
+  },
+  "sameAs": [
+    "http://weibo.com/626242034",
+    "https://github.com/henryhuang",
+    "https://unsplash.com/@henryhh"
+    ]
+  }
+  </script>
+  </body>
+</html>

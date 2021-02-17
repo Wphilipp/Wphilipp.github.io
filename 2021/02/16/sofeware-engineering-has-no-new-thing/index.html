@@ -1,10 +1,247 @@
-{% extends "_layout.swig" %}
-{% import '_macro/post.swig' as post_template %}
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1">
 
-{% block title %} {{ page.title }} - {{ config.title }} {% endblock %}
 
-{% block content %}
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="description" content="软件工程里没有新的东西"/>
+
+
+
+
+  <meta name="keywords" content="软件工程," />
+
+
+
+
+
+    <link rel="alternate" href="/default" title="cloudyDog's blog">
+
+
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="/aupuj-uf7ub-001.ico?v=1.1"/>
+
+
+
+<link rel="canonical" href="http://yoursite.com/2021/02/16/sofeware-engineering-has-no-new-thing/"/>
+
+
+<meta name="description" content="软件工程里没有那么多的新东西，要从更高一级的层面去反思技术的演进，去了解技术的历史，分析推动技术演进的背后因素，以及当前技术的优缺点和瓶颈，也就可以猜测技术以后的几个大概的演进方向。软件工程的核心是抽象，现在我另外觉得不管是业务开发还是底层框架开发，软件工程开发环节的本质是逻辑的组织与表达。简单的逻辑是人脑瞬间就能组织出来的，如A箱子里有10个糖，B箱子里是空的，如果我想平均分，那么这个逻辑自">
+<meta property="og:type" content="article">
+<meta property="og:title" content="软件工程里没有新的东西">
+<meta property="og:url" content="http://yoursite.com/2021/02/16/sofeware-engineering-has-no-new-thing/index.html">
+<meta property="og:site_name" content="cloudyDog&#39;s blog">
+<meta property="og:description" content="软件工程里没有那么多的新东西，要从更高一级的层面去反思技术的演进，去了解技术的历史，分析推动技术演进的背后因素，以及当前技术的优缺点和瓶颈，也就可以猜测技术以后的几个大概的演进方向。软件工程的核心是抽象，现在我另外觉得不管是业务开发还是底层框架开发，软件工程开发环节的本质是逻辑的组织与表达。简单的逻辑是人脑瞬间就能组织出来的，如A箱子里有10个糖，B箱子里是空的，如果我想平均分，那么这个逻辑自">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-02-16T06:39:00.000Z">
+<meta property="article:modified_time" content="2021-02-16T07:33:43.369Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="软件工程">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=1.1"/>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
+
+
+
+
+
+<script type="text/javascript">
+  var themeConfig = {
+    fancybox: {
+      enable: false
+    },
+  };
+</script>
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    <title> 软件工程里没有新的东西 - cloudyDog's blog </title>
+  <meta name="generator" content="Hexo 4.2.1"></head>
+
+  <body>
+    <div id="page">
+      <header id="masthead"><div class="site-header-inner">
+    <h1 class="site-title">
+        <a href="/." class="logo">cloudyDog's blog</a>
+    </h1>
+
+    <nav id="nav-top">
+        
+    </nav>
+
+</div>
+
+      </header>
+      <div id="content">
+        
     <div id="primary">
-        {{ post_template.render(page) }}
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          软件工程里没有新的东西
+        
+      </h1>
+
+      <time class="post-time">
+          Feb 16 2021
+      </time>
+    </header>
+
+
+
+    
+            <div class="post-content">
+            <p>  软件工程里没有那么多的新东西，要从更高一级的层面去反思技术的演进，去了解技术的历史，分析推动技术演进的背后因素，以及当前技术的优缺点和瓶颈，也就可以猜测技术以后的几个大概的演进方向。软件工程的核心是抽象，现在我另外觉得不管是业务开发还是底层框架开发，<strong>软件工程开发环节的本质是逻辑的组织与表达。</strong>简单的逻辑是人脑瞬间就能组织出来的，如A箱子里有10个糖，B箱子里是空的，如果我想平均分，那么这个逻辑自然就是从A箱子里拿出5个放到B箱子里。复杂点的逻辑就是普通的人脑所不擅长的了，而且这种复杂往往有两种，一种是质上的复杂，这就只能靠少数聪明的大脑才能把这种逻辑组织出来，也就是“算法”和“数据结构”，另一种是量上的复杂，即由于组织起来的逻辑虽然简单，但是数量非常庞大，这种逻辑虽然能组织起来，但是在表达上存在问题，即普通的人脑很难理解这种逻辑，尽管这种逻辑是走的通的，但是对于工程项目来说，别人甚至自己事后都很难理解的问题是很严重的，这时候就需要“设计模式”来对在量上比较复杂的逻辑进行更合理的组织，从而让其表达的更易让普通的人脑理解。现在总结一下，<strong>软件工程里最核心的东西或者说工具就是：“简单逻辑” +  “算法” + “数据结构” + “设计模式”，我觉得这是软件工程从诞生到现在从未改变的东西。</strong>（插句题外话，“简单逻辑”是普通人都有的能力，“算法”和“数据结构”需要的是数学能力，“设计模式”需要的是抽象能力）</p>
+<p>  <strong>而这几十年软件工程行业一直在快速发展，改变的只是“场景”</strong>，或者说是由于“场景”的推动，催生出了操作系统、数据库、开发语言以及业务层面的各种框架、库、编译器，他们全都是基于那4样最核心的工具创造出来的，只是不同的“场景”让开发者给它们穿上了很多层不同的外衣。并且，这种场景的变化也会催生出新的场景，无穷无尽，所以说“场景”才是推动软件工程发展的动力。但是现在这种变化是越来越细、越来越小，以至于现在业务层的各种层出不穷的框架、工具其实只是在原先的基础上把最外一两层的外衣进行个替换或者裁剪，然后就创造出了所谓的新东西，其实从本质上讲没有新的东西，甚至是绝大部分的内容都没改变，改变的只是相对表层的一点东西，但正是表层的这一点改变，往往带来的使用上的很大的变化。 而这种使用上的较大变化让一些人感觉学不动了。其实，只要我们理解到了这个层面，就会发现透过表象看清本质，需要重新了解的部分并不多，<strong>关键在于理解“场景”，知道为什么要这么变化，并且反思这种变化带来的利弊，以及客观瓶颈，</strong>如果这么做，也许还能走在“场景”前面，可能对未来的技术技术迭代都能接受的理所当然。</p>
+<p>  说到这，可见对“场景”的准确深入的理解的是非常重要的，但是我还没具体的解释我所表达的“场景”是指什么？对于业务开发而言，这个“场景”就是指业务领域里的用户需求，而要深入准确摸清用户的需求，不能单纯的指望用户去表达，重要的是要掌握相关的业务领域知识。对于造各种轮子而言，这个“场景”就是各种性能要求或是开发者的使用体验，而要搞清这种需求，需要的可能是对客观硬件或是设计理念的理解。</p>
+
+            </div>
+          
+
+    
+      <footer class="post-footer">
+        <div class="post-tags">
+          
+            <a href="/tags/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/">软件工程</a>
+          
+        </div>
+
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/2021/02/16/about-system-design-think/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">关于系统设计的思考</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    
+    
+      <a class="next" href="/2020/01/31/to-be-effective-programer/">
+        <span class="next-text nav-default">我认为的一个程序员能独当一面的标准</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+        
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+      </footer>
+    
+  </article>
+
     </div>
-{% endblock %}
+
+      </div>
+
+      <footer id="colophon"><span class="copyright-year">
+    
+        &copy;
+    
+        2012 -
+    
+    2021
+    <span class="footer-author">John Doe.</span>
+    <span class="power-by">
+        Powered by <a class="hexo-link" href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> and <a class="theme-link" href="https://github.com/henryhuang/hexo-theme-polarbearsimple" target="_blank" rel="noopener">Polar Bear Simple</a>
+    </span>
+</span>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+    
+
+
+    
+
+
+    
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+
+    <script type="text/javascript" src="/js/src/theme.js?v=1.1"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=1.1"></script>
+
+    
+
+  
+  <script type="application/ld+json">
+  {
+  "@context": "http://www.schema.org",
+  "@type": "Person",
+  "@id": "https://huangyijie.com/about/",
+  "name": "黄奕杰",
+  "alternateName": "Henry Huang",
+  "nationality": "中国",
+  "birthPlace" : {
+    "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+      "addressLocality": "汕头市",
+      "addressRegion": "广东省",
+          "addressCountry": "中国"
+    }
+  },
+  "gender": "Male",
+  "Description": "Software Engineer",
+  "disambiguatingDescription": "Full stack software engineer, focus on Java and JavaScript.",
+  "jobTitle": "Software Engineer",
+  "url": "https://huangyijie.com",
+  "image": "https://s.gravatar.com/avatar/4e0e61fdf1b2bcfb4ee31da27601fe6b?s=512&r=g",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "深圳市",
+    "addressRegion": "广东省",
+    "addressCountry": "中国"
+  },
+  "sameAs": [
+    "http://weibo.com/626242034",
+    "https://github.com/henryhuang",
+    "https://unsplash.com/@henryhh"
+    ]
+  }
+  </script>
+  </body>
+</html>

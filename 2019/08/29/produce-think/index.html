@@ -1,10 +1,254 @@
-{% extends "_layout.swig" %}
-{% import '_macro/post.swig' as post_template %}
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1">
 
-{% block title %} {{ page.title }} - {{ config.title }} {% endblock %}
 
-{% block content %}
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="description" content="产品思考"/>
+
+
+
+
+  <meta name="keywords" content="产品,需求," />
+
+
+
+
+
+    <link rel="alternate" href="/default" title="cloudyDog's blog">
+
+
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="/aupuj-uf7ub-001.ico?v=1.1"/>
+
+
+
+<link rel="canonical" href="http://yoursite.com/2019/08/29/produce-think/"/>
+
+
+<meta name="description" content="刚入行时，我对产品没有理解，产品让怎么实现就怎么实现，但是作为一个程序员，应该具备一定的需求分析能力。 1、在考虑一个产品需求是否合理时，第一点就是需要分析这个需求是否违背了根本逻辑。   比如：一个类似共享单车的管理后台，某个页面需要展示用户购买的月票列表。产品的需求是用户可以一次购买相邻月份的月票，并且只生成一张月票，只是月票的有效期是连续的多个月份，然后在用来展示用户所购买月票列表的表">
+<meta property="og:type" content="article">
+<meta property="og:title" content="产品思考">
+<meta property="og:url" content="http://yoursite.com/2019/08/29/produce-think/index.html">
+<meta property="og:site_name" content="cloudyDog&#39;s blog">
+<meta property="og:description" content="刚入行时，我对产品没有理解，产品让怎么实现就怎么实现，但是作为一个程序员，应该具备一定的需求分析能力。 1、在考虑一个产品需求是否合理时，第一点就是需要分析这个需求是否违背了根本逻辑。   比如：一个类似共享单车的管理后台，某个页面需要展示用户购买的月票列表。产品的需求是用户可以一次购买相邻月份的月票，并且只生成一张月票，只是月票的有效期是连续的多个月份，然后在用来展示用户所购买月票列表的表">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2019-08-28T20:48:20.000Z">
+<meta property="article:modified_time" content="2020-02-02T13:08:09.460Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="产品">
+<meta property="article:tag" content="需求">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=1.1"/>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
+
+
+
+
+
+<script type="text/javascript">
+  var themeConfig = {
+    fancybox: {
+      enable: false
+    },
+  };
+</script>
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+    <title> 产品思考 - cloudyDog's blog </title>
+  <meta name="generator" content="Hexo 4.2.1"></head>
+
+  <body>
+    <div id="page">
+      <header id="masthead"><div class="site-header-inner">
+    <h1 class="site-title">
+        <a href="/." class="logo">cloudyDog's blog</a>
+    </h1>
+
+    <nav id="nav-top">
+        
+    </nav>
+
+</div>
+
+      </header>
+      <div id="content">
+        
     <div id="primary">
-        {{ post_template.render(page) }}
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          产品思考
+        
+      </h1>
+
+      <time class="post-time">
+          Aug 29 2019
+      </time>
+    </header>
+
+
+
+    
+            <div class="post-content">
+            <p>   刚入行时，我对产品没有理解，产品让怎么实现就怎么实现，但是作为一个程序员，应该具备一定的需求分析能力。</p>
+<h4 id="1、在考虑一个产品需求是否合理时，第一点就是需要分析这个需求是否违背了根本逻辑。"><a href="#1、在考虑一个产品需求是否合理时，第一点就是需要分析这个需求是否违背了根本逻辑。" class="headerlink" title="1、在考虑一个产品需求是否合理时，第一点就是需要分析这个需求是否违背了根本逻辑。"></a>1、在考虑一个产品需求是否合理时，第一点就是需要分析这个需求是否违背了根本逻辑。</h4><p>   比如：一个类似共享单车的管理后台，某个页面需要展示用户购买的月票列表。产品的需求是用户可以一次购买相邻月份的月票，并且只生成一张月票，只是月票的有效期是连续的多个月份，然后在用来展示用户所购买月票列表的表格中，每一条记录也就自然是一个有效期可以有多个月份的月票了。这么做有问题吗？最大的问题就是月票这概念实际的含义是超出这个概念所表述的范畴的，既然叫月票，那有效期当然只能是某一个月份了，现在有效期却可以是多个月份，这么做就是违背了基本的逻辑，那会带来什么问题呢？如果后期产品需要统计每个月的月票销售金额该怎么实现呢？遍历系统里所有已售的月票，过滤出有效期包含当前月份的月票数量，然后去查询那个月份月票的单价（如果不同月份月票单价不同），最后把这个数量乘上这个单价。如果是个有追求技术扎实的新手，在想到了这个思路后，可能会继续钻进去思考如何高效的过滤出符合条件的月票，一旦想出可以优化的地方可能还会觉得我好牛逼啊。但是，如果对产品有所思考，就会发现这个思路实现起来之所以变扭，就是它在根本逻辑上出了问题：一张月票可以在多个月份有效。如果月票就是只有一个月的有效期，那这个需求实现起来不就非常简单了。</p>
+<p>   如果那个技术OK的新手能高效率的实现这个变扭的思路，那这个结果是不是也能让人接受？当然不是！因为需求是不会完的，以后随着不断产生的新的需求，会不得不面对更多更变扭的实现逻辑，这就像产生了一个技术上的无底洞，每一次变扭的实现逻辑都可能加大下次实现需求的难度，循环往复，也许最后直接跑路走人，直到新来的同事一看代码：卧槽，这TMD写的是啥！这个问题的根本原因是，我们有的需求违背了根本逻辑，而大部分需求又是很正常的基于基本逻辑的（就像看到筷子就知道是用来吃饭的，所提的需求自然会和吃饭有关），这两种需求因此产生了矛盾，我们也没法预知未来的哪些正常需求会这个“问题需求”产生矛盾，但是可以肯定的是一定会有需求产生矛盾。</p>
+<h4 id="2、判断需求是否合理的第二点就像我看到过的一句话“不要把需求当成需求，也不要把产品形态当成本质”。"><a href="#2、判断需求是否合理的第二点就像我看到过的一句话“不要把需求当成需求，也不要把产品形态当成本质”。" class="headerlink" title="2、判断需求是否合理的第二点就像我看到过的一句话“不要把需求当成需求，也不要把产品形态当成本质”。"></a>2、判断需求是否合理的第二点就像我看到过的一句话“不要把需求当成需求，也不要把产品形态当成本质”。</h4><p>   也许人都有这样的特点，如果我想从别人那得到什么，一般不会直接对那个人说给我什么，而是替他想一个实现方法，让他去做那个方法从而得到我想得到的。每个人包括产品有时候也会带入这种思维，比如需要前端实现一个需求，会很自然的替前端想一个实现形式，然后让前端实现这个形式，但是产品可能并不太了解不同实现形式对于前端的开发难度，一旦定了一个开发成本高的形式，也就潜在的影响了整个系统的开发进度。所以，如果前端在评审需求时，发现某个需求的实现成本比较高，可以进一步深入的了解提出这个需求的根本动机，然后提出几个相对低成本的实现方式供产品抉择，刚入行的我在面对开发成本比较高的需求时，往往会把它当成和一个挑战去实现，现在觉得工作和技术应该有明确的界线，工作的首要原则就是按质按量的完成需求。追求技术是个人的私事不应和工作混在一起。</p>
+<h4 id="3、判断需求是否合理的第三点是这个需求是否纯粹，纯粹的意思就是这个需求想要达成的目的是否是一个。"><a href="#3、判断需求是否合理的第三点是这个需求是否纯粹，纯粹的意思就是这个需求想要达成的目的是否是一个。" class="headerlink" title="3、判断需求是否合理的第三点是这个需求是否纯粹，纯粹的意思就是这个需求想要达成的目的是否是一个。"></a>3、判断需求是否合理的第三点是这个需求是否纯粹，纯粹的意思就是这个需求想要达成的目的是否是一个。</h4><p>   因为一个需求如果既想实现A目的又想实现B目的，那么必然给实现带来了复杂性，而软件工程的意义就是在实现目的的前提下降低复杂性。所以考虑需求时也需要参考一下单一职能原则，既一个需求只实现一个目的。比如有这样一个场景：一个小程序的页面，需要用户向系统提交车牌，用户可以通过下拉框选择车牌，也可以在表单中手动输入车牌。于是，产品提出的需求就是在这个页面中，上面部分是一个车牌下拉框供用户选择，下面部分是一个车牌表单加上一个软键盘。但是前端在实现这个页面时，就要处理好这两种方式之间交互逻辑，如用户在选择了下拉框中的车牌，那下面软键盘就要隐藏，表单中的车牌就要清空。如果在下面表单中输入了车牌，上面下拉框中已选择的车牌就要被清空，实际场景中上面不是下拉框而是一个自定义的选择面板，下面的软键盘也是自己实现的，因此需要考虑的交互逻辑比这更复杂一些。</p>
+<p>   这个页面站在产品角度开发成本并不大，因为没有考虑到上下两部分之间的交互逻辑，而之所以产生交互逻辑就是因为这个页面的需求想要实现2个目的，用户手动输入车牌和用户选择系统给出的车牌选项。那如果将这个需求拆分，由两个页面实现，第一个页面是用户选择车牌，如果不选择，可以进入下一页面手动输入车牌，这样一来，开发成本降低不少，研发进度能加快一点，产品想要的功能还没少，何乐而不为？</p>
+<p>   除此之外，算是对前面第二点的补充，前端在过需求时就算没有遇到成本比较比较高的需求，也要搞清每个需求的目的，了解系统的业务逻辑，而不是单纯的处理自己不清楚有什么意义的数据，这算是代码之外的软能力吧。</p>
+
+            </div>
+          
+
+    
+      <footer class="post-footer">
+        <div class="post-tags">
+          
+            <a href="/tags/%E4%BA%A7%E5%93%81/">产品</a>
+          
+            <a href="/tags/%E9%9C%80%E6%B1%82/">需求</a>
+          
+        </div>
+
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/2019/09/19/dialectical-thinking/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">关于辩证思考</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    
+    
+      <a class="next" href="/2019/08/11/software-think/">
+        <span class="next-text nav-default">软件工程的本质</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+        
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+      </footer>
+    
+  </article>
+
     </div>
-{% endblock %}
+
+      </div>
+
+      <footer id="colophon"><span class="copyright-year">
+    
+        &copy;
+    
+        2012 -
+    
+    2021
+    <span class="footer-author">John Doe.</span>
+    <span class="power-by">
+        Powered by <a class="hexo-link" href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> and <a class="theme-link" href="https://github.com/henryhuang/hexo-theme-polarbearsimple" target="_blank" rel="noopener">Polar Bear Simple</a>
+    </span>
+</span>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+    
+
+
+    
+
+
+    
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+
+    <script type="text/javascript" src="/js/src/theme.js?v=1.1"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=1.1"></script>
+
+    
+
+  
+  <script type="application/ld+json">
+  {
+  "@context": "http://www.schema.org",
+  "@type": "Person",
+  "@id": "https://huangyijie.com/about/",
+  "name": "黄奕杰",
+  "alternateName": "Henry Huang",
+  "nationality": "中国",
+  "birthPlace" : {
+    "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+      "addressLocality": "汕头市",
+      "addressRegion": "广东省",
+          "addressCountry": "中国"
+    }
+  },
+  "gender": "Male",
+  "Description": "Software Engineer",
+  "disambiguatingDescription": "Full stack software engineer, focus on Java and JavaScript.",
+  "jobTitle": "Software Engineer",
+  "url": "https://huangyijie.com",
+  "image": "https://s.gravatar.com/avatar/4e0e61fdf1b2bcfb4ee31da27601fe6b?s=512&r=g",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "深圳市",
+    "addressRegion": "广东省",
+    "addressCountry": "中国"
+  },
+  "sameAs": [
+    "http://weibo.com/626242034",
+    "https://github.com/henryhuang",
+    "https://unsplash.com/@henryhh"
+    ]
+  }
+  </script>
+  </body>
+</html>
